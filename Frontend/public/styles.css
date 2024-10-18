@@ -1,0 +1,198 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b2b2b; /* Light gray background for a professional look */
+    color: #2b2b2b; /* Dark gray text color for better readability */
+}
+
+/* Train Component Styling */
+.train-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.train-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.train-step .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #b0b0b0; /* Soft gray for inactive steps */
+    color: #fff; /* Light color text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 3px solid #d1d1d1;
+}
+
+.train-step.step-active .circle {
+    background-color: #4a90e2; /* Soft blue for active steps */
+    color: #fff; /* White for contrast */
+    border-color: #4a90e2;
+}
+
+.train-step .label {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #666; /* Darker gray for text */
+}
+
+.train-step.step-active .label {
+    color: #4a90e2; /* Soft blue to match the active circle */
+}
+
+.connector {
+    width: 120px;
+    height: 4px;
+    background-color: #b0b0b0; /* Soft gray for inactive connectors */
+    margin: 0 15px;
+    transition: background-color 0.3s ease;
+}
+
+.train-step.step-active + .connector {
+    background-color: #4a90e2; /* Blue for active connectors */
+}
+
+/* Step Container Styling */
+.step-container {
+    background-color: #f0f0f0; /* Light gray to contrast with the main background */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Slightly lighter shadow for subtle effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.step-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* More prominent shadow */
+}
+
+/* Image Preview Styling */
+.image-preview {
+    position: relative;
+    display: inline-block;
+}
+
+#uploadedImage {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Softer shadow */
+}
+
+/* File Input Styling */
+.custom-file-input {
+    border: 3px dashed #888; /* Medium gray border */
+    padding: 20px;
+    color: #444; /* Darker gray for text */
+    background-color: #f0f0f0; /* Light background to contrast with the gray */
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-file-input:hover {
+    border-color: #4a90e2; /* Blue for hover state */
+    background-color: #e0e0e0; /* Slightly darker background */
+}
+
+/* OCR Result Styling */
+.output-box {
+    background-color: #fff8e1; /* Soft beige to contrast with the gray and blue */
+    color: #2b2b2b; /* Dark gray text for good readability */
+    min-height: 200px;
+    overflow-y: auto;
+    padding: 20px;
+    border: 2px solid #4a90e2; /* Blue border for accent */
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 8px;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Smooth Button Transitions */
+.btn-primary {
+    background-color: #4a90e2; /* Blue for buttons */
+    border: none;
+    color: #fff; /* White for text */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #357ABD; /* Darker blue for hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-danger {
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #e74c3c;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Button Styling for Consistency */
+button {
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Loading Spinner Styling */
+.spinner-border {
+    color: #4a90e2; /* Blue spinner */
+}
+
+/* Train Component Styling Refinement */
+.train-step {
+    padding: 10px;
+    color: #666; /* Darker gray for text */
+}
+
+.train-step.step-active .circle {
+    background-color: #4a90e2; /* Blue color for active step */
+    color: #fff;
+}
+
+.train-step .circle {
+    border: 3px solid #b0b0b0; /* Soft gray border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* OCR Output Styling for Recognized Text */
+.output-box {
+    font-family: 'Courier New', Courier, monospace;
+    max-height: 400px;
+    line-height: 1.6;
+}
+
+.output-box strong {
+    color: #4a90e2; /* Blue to highlight recognized text labels */
+}
+
+img.rounded {
+    border: 3px solid #4a90e2; /* Blue border for annotated image */
+}

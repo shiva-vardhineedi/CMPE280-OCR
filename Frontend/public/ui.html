@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Workflow</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRHT5t2pK1m1Uhb1AB5dqijhhyWT7YuZnla6Xt0fI" crossorigin="anonymous">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <!-- Train Component for Step Indicators -->
+        <div class="train-component mb-5 d-flex align-items-center justify-content-center">
+            <div class="train-step step-active" id="step-1">
+                <div class="circle">1</div>
+                <div class="label">Upload Image</div>
+            </div>
+            <div class="connector"></div>
+            <div class="train-step" id="step-2">
+                <div class="circle">2</div>
+                <div class="label">Perform OCR</div>
+            </div>
+            <div class="connector"></div>
+            <div class="train-step" id="step-3">
+                <div class="circle">3</div>
+                <div class="label">Results</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Image Upload -->
+        <div id="step1" class="step-container p-5 mb-5">
+            <h4 class="mb-4">Step 1: Upload Your Image</h4>
+            <input type="file" id="imageInput" accept="image/*" class="form-control-lg custom-file-input">
+            <div id="imagePreview" class="image-preview mt-4" style="display: none;">
+                <img id="uploadedImage" src="#" alt="Uploaded Image" class="img-fluid rounded shadow-sm" />
+                <button class="btn btn-outline-danger btn-sm mt-3" onclick="removeImage()">Remove Image</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Perform OCR -->
+        <div id="step2" class="step-container p-5 mb-5" style="display: none;">
+            <h4 class="mb-4">Step 2: Perform OCR</h4>
+            <button class="btn btn-primary btn-lg" onclick="performOCR()">Perform OCR</button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="text-center mb-5" style="display: none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Analyzing your image...</p>
+        </div>
+
+        <!-- Step 3: OCR Results -->
+        <!-- Step 3: OCR Results -->
+        <div id="step3" class="step-container p-5 mb-5" style="display: none;">
+            <h4 class="mb-4">Step 3: OCR Results</h4>
+            <div class="row">
+                <!-- Annotated Image Section -->
+                <div class="col-md-6 text-center mb-4">
+                    <h5>Annotated Image</h5>
+                    <img id="outputImage" style="display: none; max-width: 100%; border: 1px solid #ccc;" alt="OCR Result Image" class="rounded shadow-sm">
+                </div>
+                
+                <!-- OCR Text Results Section -->
+                <div class="col-md-6">
+                    <h5>Recognized Text</h5>
+                    <div id="outputText" class="output-box p-3 border rounded shadow-sm" style="background-color: #f8f9fa; max-height: 400px; overflow-y: auto;">
+                        <!-- Dynamically generated content will go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
